@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 FROM jenkins/inbound-agent:alpine-jdk21
 
 USER root
@@ -22,3 +23,15 @@ RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/s
     && mv kubectl /bin
 
 USER jenkins
+=======
+FROM eclipse-temurin:21-alpine
+
+WORKDIR /app
+
+COPY . .
+
+RUN chmod +x gradlew
+RUN ./gradlew build -x test
+
+CMD ["java", "-jar", "build/libs/*.jar"]
+>>>>>>> bf53c5af6bde55a5e30bea1bafbfe6f85d5d80ee
