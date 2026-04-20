@@ -1,4 +1,4 @@
-FROM openjdk:21-alpine
+FROM eclipse-temurin:21-alpine
 WORKDIR /app
 COPY . .
 RUN ./gradlew build -x test
