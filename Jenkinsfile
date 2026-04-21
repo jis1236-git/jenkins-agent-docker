@@ -77,8 +77,8 @@ spec:
               sed -i "s|server: https://.*|server: https://${K8S_HOST}:${K8S_PORT}|g" /tmp/kubeconfig-patched
               echo "== connecting to https://${K8S_HOST}:${K8S_PORT} =="
               kubectl --kubeconfig=/tmp/kubeconfig-patched get nodes --request-timeout=5s
-              kubectl --kubeconfig=/tmp/kubeconfig-patched apply -f /home/jenkins/agent/workspace/simple-echo-2/deployment.yaml
-              kubectl --kubeconfig=/tmp/kubeconfig-patched apply -f /home/jenkins/agent/workspace/simple-echo-2/service.yaml
+              kubectl --kubeconfig=/tmp/kubeconfig-patched apply -f /home/jenkins/agent/workspace/simple-echo-JenkinsFile/deployment.yaml
+              kubectl --kubeconfig=/tmp/kubeconfig-patched apply -f /home/jenkins/agent/workspace/simple-echo-JenkinsFile/service.yaml
               echo "== deploy done =="
             '''
           }
