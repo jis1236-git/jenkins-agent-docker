@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-echo
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-echo
+  template:
+    metadata:
+      labels:
+        app: simple-echo
+    spec:
+      containers:
+      - name: simple-echo
+        image: jis1236/simple-echo:latest
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
